@@ -37,7 +37,7 @@ export default function App() {
                   La idea no era hacer algo súper complejo sino practicar un flujo bastante parecido a un proyecto BI real, trabajando con ETL, SQL Server, modelado y visualización de datos.
                 </p>
                 <a
-                  href="https://github.com/juanfonseca09/transporte/stm"
+                  href="https://github.com/juanfonseca09/transporte/tree/main/back/sql"
                   target="_blank"
                   rel="noreferrer"
                   className="github-btn"
