@@ -1,16 +1,33 @@
-# React + Vite
+# STM - Análisis de Viajes en Montevideo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto lo hice usando datos reales del STM de Montevideo con la idea de analizar cómo se comportan los viajes y practicar un flujo bastante parecido a algo de BI/Data Engineering real.
 
-Currently, two official plugins are available:
+Los datos originales venían separados en varios CSV mensuales y además eran bastante grandes, así que primero armé un pequeño ETL en Python para leerlos por partes, limpiarlos y cargarlos en SQL Server sin problemas de memoria.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Después trabajé sobre SQL Server creando views y stored procedures para resumir información y dejar consultas preparadas para análisis y visualización.
 
-## React Compiler
+Por último, conecté todo a Power BI para armar dashboards mostrando métricas como:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- viajes por mes
+- pasajeros por hora
+- líneas más utilizadas
+- empresas con más movimiento
+- variaciones entre meses
 
-## Expanding the ESLint configuration
+## Tecnologías
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Python
+- Pandas
+- SQL Server
+- SQL
+- Power BI
+- React + Bootstrap
+
+## ETL
+
+Para procesar los archivos usé `chunksize` porque el dataset completo era bastante pesado.
+
+El flujo fue más o menos:
+
+```text
+CSV -> Python -> SQL Server -> Power BI
