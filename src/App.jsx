@@ -19,7 +19,7 @@ export default function App() {
             <Card className="project-card shadow-sm border-0">
               <Card.Body>
                 <p className="text-muted">
-                  Este proyecto lo hice usando datos reales del STM de Montevideo con la idea de analizar cómo se comportan los viajes y tratar de encontrar algunos patrones interesantes según horarios, líneas y empresas.
+                  Este proyecto lo hice usando datos reales del STM de Montevideo tomados entre setiembre de 2025 y marzo de 2026, con la idea de analizar cómo se comportan los viajes y tratar de encontrar algunos patrones interesantes según horarios, líneas y empresas.
                 </p>
                 <p className="text-muted">
                   Los datos venían separados en varios CSV mensuales y bastante pesados, así que primero armé un pequeño proceso ETL en Python para leerlos por partes, limpiarlos y cargarlos en SQL Server sin tener problemas de memoria.
